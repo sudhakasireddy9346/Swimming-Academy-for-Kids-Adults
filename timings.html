@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AQUAFLOW Swimming Academy | Batch Timings</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet" href="timings.css">
+
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header" id="header">
+  <div class="container nav-wrap">
+    <a href="index.html" class="brand">
+      <img class="logo logo-light" src="/764d7c27-2704-447a-8431-1c050a05b83d.png" alt="AQUAFLOW logo">
+      <img class="logo logo-dark" src="/f7fbfc3b-d4d7-49fc-ac09-b3e27f596284.png" alt="AQUAFLOW logo">
+      <span class="brand-text"><strong>AQUAFLOW</strong><small>Swimming Academy</small></span>
+    </a>
+    <nav class="nav" id="nav">
+      <ul>
+        <li class="dropdown">
+          <a href="index.html">Home <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="index.html">Home 1</a></li>
+            <li><a href="home2.html">Home 2</a></li>
+          </ul>
+        </li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="programs.html">Programs</a></li>
+        <li><a href="coaches.html">Coaches</a></li>
+        <li><a href="timings.html" class="active">Timings</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+      </ul>
+    </nav>
+    <div class="head-actions">
+      <button class="rtl-btn" id="rtlBtn" aria-label="Toggle RTL / LTR"><i class="fa-solid fa-right-left"></i> <span id="rtlTxt">RTL</span></button>
+      <button class="theme-btn" id="themeBtn" aria-label="Toggle dark mode"><i class="fa-solid fa-moon"></i></button>
+      <a href="login.html" class="btn head-cta">LOGIN <i class="fa-solid fa-arrow-right"></i></a>
+      <button class="burger" id="burger" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="thero" id="top">
+  <div class="container thero-grid">
+    <div class="thero-copy reveal">
+      <span class="eyebrow">Batch Timings</span>
+      <h1>Find a swim slot<br><em>that fits your day.</em></h1>
+      <p class="thero-lead">Early mornings, after-school evenings and weekend batches. Browse the full weekly schedule, check seat availability and book a free trial with your coach.</p>
+      <div class="hero-btns">
+        <a href="#schedule" class="btn btn-primary">See Weekly Schedule <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="#finder" class="btn btn-secondary">Find My Batch</a>
+      </div>
+      <ul class="checks">
+        <li><span class="tick"><i class="fa-solid fa-check"></i></span>Certified coaches</li>
+        <li><span class="tick"><i class="fa-solid fa-check"></i></span>Free trial class</li>
+        <li><span class="tick"><i class="fa-solid fa-check"></i></span>Small batches</li>
+      </ul>
+    </div>
+    <div class="hero-art reveal">
+      <div class="ring" aria-hidden="true"></div>
+      <div class="arch"><img src="https://img.freepik.com/premium-photo/trainer-woman-showing-clipboard-swimmer-pool_107420-7706.jpg" alt="Coach guiding a swimmer in the pool"></div>
+      <div class="fcard fc1"><b>4</b><span>batch windows<br>every day</span></div>
+      <div class="fcard fc2"><span class="ico"><i class="fa-solid fa-clock"></i></span><div><strong>Free trial ready</strong><span>Pick a slot and meet your coach</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 1 WEEKLY SCHEDULE -->
+<section class="section alt" id="schedule">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Weekly Schedule</span>
+      <h2>Every batch, day by day</h2>
+      <p>Filter by age group or search by program, coach or time to find the batches that match you or your child.</p>
+    </div>
+    <div class="tabs reveal" id="tabs" role="group" aria-label="Filter batches by age group">
+      <button class="tab" data-filter="all" aria-pressed="true">All batches</button>
+      <button class="tab" data-filter="kids" aria-pressed="false">Kids (4-8)</button>
+      <button class="tab" data-filter="teens" aria-pressed="false">Teens (9-16)</button>
+      <button class="tab" data-filter="adults" aria-pressed="false">Adults</button>
+    </div>
+    <div class="toolbar reveal">
+      <div class="search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="search" id="searchBox" placeholder="Search program, coach or time" aria-label="Search the schedule">
+      </div>
+    </div>
+    <div class="table-wrap reveal">
+      <table>
+        <thead>
+          <tr><th>Time</th><th>Days</th><th>Program</th><th>Coach</th><th>Seats</th></tr>
+        </thead>
+        <tbody id="rows">
+          <tr data-cat="teens"><td><strong>6:00 - 7:00 AM</strong><small>Early morning</small></td><td>Mon - Sat</td><td>Stroke Masters</td><td>Kavya Reddy</td><td><span class="status few">Few left</span></td></tr>
+          <tr data-cat="adults"><td><strong>6:00 - 7:00 AM</strong><small>Early morning</small></td><td>Mon - Sat</td><td>Adult Beginners</td><td>Arjun Rao</td><td><span class="status open">Open</span></td></tr>
+          <tr data-cat="kids"><td><strong>8:00 - 9:00 AM</strong><small>Morning</small></td><td>Mon - Fri</td><td>Little Splashers</td><td>Meera Nair</td><td><span class="status open">Open</span></td></tr>
+          <tr data-cat="kids"><td><strong>9:30 - 10:30 AM</strong><small>Weekend morning</small></td><td>Sat - Sun</td><td>Little Splashers</td><td>Meera Nair</td><td><span class="status few">Few left</span></td></tr>
+          <tr data-cat="teens"><td><strong>5:00 - 6:00 PM</strong><small>Evening</small></td><td>Mon - Fri</td><td>Stroke Masters</td><td>Kavya Reddy</td><td><span class="status full">Waitlist</span></td></tr>
+          <tr data-cat="teens"><td><strong>5:00 - 6:00 PM</strong><small>Evening</small></td><td>Tue, Thu, Sat</td><td>Elite Performance Squad</td><td>Rohan Verma</td><td><span class="status open">Open</span></td></tr>
+          <tr data-cat="adults"><td><strong>7:00 - 8:00 PM</strong><small>Night</small></td><td>Mon - Sat</td><td>Adult Aqua Fit</td><td>Arjun Rao</td><td><span class="status open">Open</span></td></tr>
+          <tr data-cat="kids teens adults"><td><strong>By appointment</strong><small>Flexible</small></td><td>Mon - Sat</td><td>Private Coaching</td><td>Sneha Iyer</td><td><span class="status open">Open</span></td></tr>
+        </tbody>
+      </table>
+      <p class="noresult" id="noResult">No batches match your search. Try a different word or age group.</p>
+    </div>
+    <p class="note"><i class="fa-solid fa-circle-info"></i>Seat availability is updated weekly. The pool is closed on Sundays for adult batches and on public holidays.</p>
+  </div>
+</section>
+
+<!-- 2 TIME OF DAY -->
+<section class="section" id="windows">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Batch Windows</span>
+      <h2>Four times of day to choose from</h2>
+      <p>Pick the window that works around school, work and family time.</p>
+    </div>
+    <div class="grid g4">
+      <article class="slot reveal"><i class="fa-solid fa-sun"></i><h3>Early Morning</h3><div class="time">6:00 - 7:00 AM</div><p>Quiet pool and cool water. Best for teens and working adults.</p></article>
+      <article class="slot reveal"><i class="fa-solid fa-cloud-sun"></i><h3>Morning</h3><div class="time">8:00 - 9:00 AM</div><p>Gentle, warm sessions for our youngest swimmers.</p></article>
+      <article class="slot reveal"><i class="fa-solid fa-mug-hot"></i><h3>Evening</h3><div class="time">5:00 - 6:00 PM</div><p>After-school stroke training and performance squads.</p></article>
+      <article class="slot reveal"><i class="fa-solid fa-moon"></i><h3>Night</h3><div class="time">7:00 - 8:00 PM</div><p>Relaxed aqua fitness after the workday.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- 3 SLOT FINDER -->
+<section class="section alt" id="finder">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Slot Finder</span>
+      <h2>Tell us who is swimming</h2>
+      <p>Choose an age group and a preferred time and we will list the matching batches from the schedule.</p>
+    </div>
+    <div class="finder">
+      <form class="panel reveal" id="finderForm" novalidate>
+        <h3>Find my batch</h3>
+        <p>Takes about ten seconds.</p>
+        <div class="field">
+          <label for="fAge">AGE GROUP</label>
+          <select id="fAge">
+            <option value="kids">Kids (4-8)</option>
+            <option value="teens">Teens (9-16)</option>
+            <option value="adults">Adults</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="fTime">PREFERRED TIME</label>
+          <select id="fTime">
+            <option value="any">Any time</option>
+            <option value="early">Early morning</option>
+            <option value="morning">Morning</option>
+            <option value="evening">Evening</option>
+            <option value="night">Night</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="fSeat">SEATS</label>
+          <select id="fSeat">
+            <option value="all">Show all batches</option>
+            <option value="open">Only batches with seats</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Find batches <i class="fa-solid fa-arrow-right"></i></button>
+      </form>
+      <div class="finder-side">
+        <div class="panel reveal">
+          <h3>Your matches</h3>
+          <p>Results come straight from the weekly schedule above.</p>
+          <div class="result" id="finderOut" aria-live="polite"></div>
+          <p class="result hint show" id="finderHint">Pick your options and press Find batches.</p>
+        </div>
+        <figure class="finder-img reveal">
+          <img src="https://outdoorswimmer.com/wp-content/uploads/2023/03/AdobeStock_68569815-1024x732.jpeg" alt="Swimmers training in clear pool lanes" loading="lazy">
+          <figcaption><i class="fa-solid fa-water"></i> Find the lane that fits you</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 BEFORE YOU COME -->
+<section class="section" id="prepare">
+  <div class="container split">
+    <div class="reveal">
+      <span class="eyebrow">Before Your Batch</span>
+      <h2>Arrive ready, swim happy</h2>
+      <p>A few simple habits help every class start on time and keep the pool safe for everyone.</p>
+      <div class="cred-list">
+        <div class="cred-item"><span class="ico"><i class="fa-solid fa-stopwatch"></i></span><div><h3>Arrive 10 minutes early</h3><p>Time to change, shower and meet your coach on the deck.</p></div></div>
+        <div class="cred-item"><span class="ico"><i class="fa-solid fa-bag-shopping"></i></span><div><h3>Pack the essentials</h3><p>Swimsuit, cap, goggles, towel and a water bottle.</p></div></div>
+        <div class="cred-item"><span class="ico"><i class="fa-solid fa-shower"></i></span><div><h3>Rinse before entering</h3><p>A quick shower keeps the water clean and balanced.</p></div></div>
+        <div class="cred-item"><span class="ico"><i class="fa-solid fa-utensils"></i></span><div><h3>Eat light</h3><p>Have a small snack an hour before, not a heavy meal.</p></div></div>
+      </div>
+      <a href="programs.html" class="btn btn-primary">Explore Programs <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+    <div class="cred-media reveal">
+      <img src="https://as1.ftcdn.net/v2/jpg/09/29/06/02/1000_F_929060233_Slo0r8mQnWZdU4HK24YxKij3VCAJ6TF5.jpg" alt="Swimming pool lanes ready for a batch">
+      <div class="badge"><strong>10 min</strong><span>Arrive before class</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 HOW TO BOOK -->
+<section class="section alt" id="how">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">How It Works</span>
+      <h2>From trial class to your regular batch</h2>
+      <p>Four simple steps, and our team helps with each one.</p>
+    </div>
+    <div class="grid g4">
+      <article class="step reveal"><div class="num">1</div><h3>Choose a slot</h3><p>Pick a batch from the schedule that fits your routine.</p></article>
+      <article class="step reveal"><div class="num">2</div><h3>Arrange a free trial</h3><p>Call or message us to arrange a free visit and meet your coach.</p></article>
+      <article class="step reveal"><div class="num">3</div><h3>Get your level</h3><p>Your coach checks your skills and places you in the right level.</p></article>
+      <article class="step reveal"><div class="num">4</div><h3>Enrol online</h3><p>Confirm your batch and pay fees from the member dashboard.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- 7 HOLIDAYS -->
+<section class="section" id="holidays">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Pool Closures</span>
+      <h2>Holidays and maintenance days</h2>
+      <p>Sample dates for planning. Please confirm with the front desk before travelling.</p>
+    </div>
+    <div class="holidays" id="holList"></div>
+  </div>
+</section>
+
+<!-- 7B FEE PLANS -->
+<section class="section alt" id="plans">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Fee Plans</span>
+      <h2>Simple pricing for every batch</h2>
+      <p>Choose how you would like to pay. Longer plans cost a little less each month.</p>
+    </div>
+    <div class="billing-wrap reveal">
+      <div class="billing" id="billing" role="group" aria-label="Billing period">
+        <button data-period="1" aria-pressed="true">Monthly</button>
+        <button data-period="3" aria-pressed="false">3 months</button>
+        <button data-period="6" aria-pressed="false">6 months</button>
+      </div>
+    </div>
+    <div class="grid g4" id="planGrid">
+      <article class="plan reveal" data-prog="Little Splashers" data-fee="1800">
+        <h3>Little Splashers</h3>
+        <p class="who">Kids aged 4-8, beginner</p>
+        <div class="price"></div>
+        <div class="per"></div>
+        <span class="save"></span>
+        <ul>
+          <li><i class="fa-solid fa-check"></i>Water confidence games</li>
+          <li><i class="fa-solid fa-check"></i>Small groups with a junior coach</li>
+          <li><i class="fa-solid fa-check"></i>Progress card every term</li>
+        </ul>
+        <a href="contact.html" class="btn btn-secondary btn-sm">Enquire now</a>
+      </article>
+      <article class="plan best reveal" data-prog="Stroke Masters" data-fee="2200">
+        <h3>Stroke Masters</h3>
+        <p class="who">Teens aged 9-16, intermediate</p>
+        <div class="price"></div>
+        <div class="per"></div>
+        <span class="save"></span>
+        <ul>
+          <li><i class="fa-solid fa-check"></i>All four strokes, step by step</li>
+          <li><i class="fa-solid fa-check"></i>Video feedback once a month</li>
+          <li><i class="fa-solid fa-check"></i>Gala preparation sessions</li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary btn-sm">Enquire now</a>
+      </article>
+      <article class="plan reveal" data-prog="Adult Aqua Fit" data-fee="2000">
+        <h3>Adult Aqua Fit</h3>
+        <p class="who">Adults, all levels</p>
+        <div class="price"></div>
+        <div class="per"></div>
+        <span class="save"></span>
+        <ul>
+          <li><i class="fa-solid fa-check"></i>Low-impact fitness in water</li>
+          <li><i class="fa-solid fa-check"></i>Relaxed evening timing</li>
+          <li><i class="fa-solid fa-check"></i>Mobility and breathing work</li>
+        </ul>
+        <a href="contact.html" class="btn btn-secondary btn-sm">Enquire now</a>
+      </article>
+      <article class="plan reveal" data-prog="Elite Performance Squad" data-fee="2600">
+        <h3>Elite Squad</h3>
+        <p class="who">Competitive teens</p>
+        <div class="price"></div>
+        <div class="per"></div>
+        <span class="save"></span>
+        <ul>
+          <li><i class="fa-solid fa-check"></i>Race-pace training sets</li>
+          <li><i class="fa-solid fa-check"></i>Head coach supervision</li>
+          <li><i class="fa-solid fa-check"></i>Meet entry guidance</li>
+        </ul>
+        <a href="contact.html" class="btn btn-secondary btn-sm">Enquire now</a>
+      </article>
+    </div>
+    <p class="fee-note">Sample prices for layout. Final fees are confirmed by the academy at enrolment.</p>
+  </div>
+</section>
+
+<!-- 8 FAQ -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Good to Know</span>
+      <h2>Timing questions, answered</h2>
+      <p>Quick answers about changing slots, missed classes and holidays.</p>
+    </div>
+    <div class="faq reveal">
+      <details open><summary>Can I change my batch later? <i class="fa-solid fa-plus"></i></summary><p>Yes. You can move to another batch once a month, subject to seat availability. Ask at the front desk or request it from your dashboard.</p></details>
+      <details><summary>What happens if my child misses a class? <i class="fa-solid fa-plus"></i></summary><p>Missed classes can be made up in a matching batch within the same month. Please tell us at least a few hours in advance.</p></details>
+      <details><summary>Is the pool open on public holidays? <i class="fa-solid fa-plus"></i></summary><p>The pool is closed on public holidays. We share the holiday list through the dashboard and our newsletter in advance.</p></details>
+      <details><summary>How long is each session? <i class="fa-solid fa-plus"></i></summary><p>Every batch runs for one hour, including a short warm-up, skill practice and a safety check at the end.</p></details>
+      <details><summary>What if my preferred batch is full? <i class="fa-solid fa-plus"></i></summary><p>Join the waitlist and we will contact you as soon as a seat opens. We can also suggest a nearby time with the same coach.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta alt" id="help">
+  <div class="container">
+    <div class="help reveal">
+      <div class="help-ico"><i class="fa-solid fa-headset"></i></div>
+      <div>
+        <h2>Can't find a time that works?</h2>
+        <p>Tell us your preferred days and we will suggest the closest batch or arrange a private session.</p>
+      </div>
+      <div class="help-actions">
+        <a href="tel:+910000000000" class="btn btn-primary"><i class="fa-solid fa-phone"></i> Call the Academy</a>
+        <a href="https://wa.me/910000000000" class="btn btn-wa"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container foot-grid">
+    <div class="foot-col brand-col">
+      <a href="index.html" class="brand">
+        <img class="logo logo-light" src="/764d7c27-2704-447a-8431-1c050a05b83d.png" alt="AQUAFLOW logo">
+        <img class="logo logo-dark" src="/f7fbfc3b-d4d7-49fc-ac09-b3e27f596284.png" alt="AQUAFLOW logo">
+        <span class="brand-text"><strong>AQUAFLOW</strong><small>Swimming Academy</small></span>
+      </a>
+      <p>Safe, structured swimming lessons for kids and adults. A little more confidence for the way you swim, train and grow.</p>
+      <div class="social">
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="foot-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="programs.html">Programs</a></li><li><a href="coaches.html">Coaches</a></li><li><a href="timings.html">Batch Timings</a></li></ul></div>
+    <div class="foot-col"><h4>Programs</h4><ul><li><a href="programs.html">Little Splashers</a></li><li><a href="programs.html">Stroke Masters</a></li><li><a href="programs.html">Adult Aqua Fit</a></li><li><a href="programs.html">Private Coaching</a></li><li><a href="login.html">Member Login</a></li></ul></div>
+    <div class="foot-col"><h4>Contact Us</h4>
+      <ul class="contact-list">
+        <li><span class="ico"><i class="fa-solid fa-location-dot"></i></span><span>12 Example Lane, Tirupati,<br>Andhra Pradesh 517501</span></li>
+        <li><span class="ico"><i class="fa-solid fa-phone"></i></span><a href="tel:+910000000000">+91 00000 00000</a></li>
+        <li><span class="ico"><i class="fa-solid fa-envelope"></i></span><a href="mailto:hello@aquaflow.com">hello@aquaflow.com</a></li>
+      </ul>
+    </div>
+    <div class="foot-col news"><h4>Newsletter</h4>
+      <p>Get updates on new batches, pool timings and special offers.</p>
+      <form class="news-form" id="newsForm">
+        <input type="email" id="newsEmail" placeholder="Your email address" aria-label="Email address" required>
+        <button type="submit" aria-label="Subscribe"><i class="fa-solid fa-arrow-right"></i></button>
+      </form>
+      <span class="news-msg" id="newsMsg" role="status"></span>
+    </div>
+  </div>
+  <div class="container foot-bottom">
+    <span>&copy; 2026 AQUAFLOW Swimming Academy. All rights reserved.</span>
+    <span><a href="privacy-policy.html">Privacy Policy</a><a href="terms-and-conditions.html">Terms &amp; Conditions</a></span>
+  </div>
+</footer>
+
+
+<script src="timings.js">
+
+</script>
+
+</body>
+</html>

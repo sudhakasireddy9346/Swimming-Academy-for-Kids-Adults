@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Member Dashboard | AQUAFLOW Swimming Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet" href="dashboard.css">
+
+</head>
+<body>
+
+<aside class="side" id="side">
+  <a href="index.html" class="brand">
+    <img class="logo logo-light" src="/764d7c27-2704-447a-8431-1c050a05b83d.png" alt="AQUAFLOW logo">
+    <img class="logo logo-dark" src="/f7fbfc3b-d4d7-49fc-ac09-b3e27f596284.png" alt="AQUAFLOW logo">
+    <span class="brand-text"><strong>AQUAFLOW</strong><small>Swimming Academy</small></span>
+  </a>
+  <div class="side-label">MEMBER SPACE</div>
+  <nav id="menu">
+    <button data-view="overview" class="active"><i class="fa-solid fa-table-columns"></i> Overview</button>
+    <button data-view="programs"><i class="fa-solid fa-person-swimming"></i> My batches</button>
+    <button data-view="schedule"><i class="fa-solid fa-calendar-days"></i> My schedule</button>
+    <button data-view="calendar"><i class="fa-solid fa-calendar-week"></i> Class calendar</button>
+    <button data-view="enrol"><i class="fa-solid fa-circle-plus"></i> Enrol in a batch</button>
+    <button data-view="coaches"><i class="fa-solid fa-whistle"></i> Coaches</button>
+    <button data-view="progress"><i class="fa-solid fa-chart-line"></i> Attendance &amp; skills</button>
+    <button data-view="fees"><i class="fa-solid fa-credit-card"></i> Fees &amp; payments</button>
+    <button data-view="history"><i class="fa-solid fa-receipt"></i> Payment history</button>
+    <button data-view="notices"><i class="fa-solid fa-bell"></i> Notifications</button>
+    <button data-view="profile"><i class="fa-solid fa-user-gear"></i> Profile settings</button>
+  </nav>
+  <div class="help">
+    <h4><i class="fa-solid fa-life-ring"></i> A little help?</h4>
+    <a href="contact.html" class="btn-help">Get support <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+  </div>
+</aside>
+<div class="scrim" id="scrim"></div>
+
+<div class="main">
+  <header class="top">
+    <div class="tools">
+      <button class="ib burger" id="burger" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+      <div class="crumb">Member portal / <b id="crumb">Overview</b></div>
+    </div>
+    <div class="tools">
+      <button class="ib" id="rtlBtn" aria-label="Toggle RTL"><i class="fa-solid fa-right-left"></i> <span id="rtlTxt">RTL</span></button>
+      <button class="ib" id="themeBtn" aria-label="Toggle dark mode"><i class="fa-solid fa-moon"></i></button>
+      <button class="ib" id="bell" aria-label="Notifications"><i class="fa-solid fa-bell"></i><span class="dot" id="bellDot">2</span></button>
+      <div class="me"><span class="av" id="avatar">AR</span><div><b id="meName">Aarav Reddy</b><small>Member</small></div></div>
+      <a href="login.html" class="ib" aria-label="Log out"><i class="fa-solid fa-right-from-bracket"></i></a>
+    </div>
+  </header>
+
+  <main class="content">
+    <!-- OVERVIEW -->
+    <section class="view show" id="v-overview">
+      <div class="welcome">
+        <div>
+          <span class="eyebrow" id="day">MEMBER DASHBOARD</span>
+          <h1 id="hello">Good morning, Aarav</h1>
+          <p>Your pool time, progress and payments in one place.</p>
+        </div>
+        <button class="btn btn-secondary" style="color:#fff" data-go="enrol">Find a batch <i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+      <div class="grid g4" id="stats" style="margin-bottom:1.4rem"></div>
+      <div class="grid g-main">
+        <div class="card"><h3>Upcoming classes</h3><p class="sub">Your weekly rhythm at a glance</p><div id="upcoming"></div></div>
+        <div class="card">
+          <h3>A note from your coach</h3><p class="sub">Progress worth celebrating</p>
+          <p class="quote">Relax your shoulders, breathe out under water and let the kick do the work. One calm lap beats ten rushed ones.</p>
+          <p class="sub" style="margin-top:1rem">- Coach Rohan Verma, Head Coach</p>
+        </div>
+        <div class="card"><h3>Fees &amp; payments</h3><p class="sub">Clear information, no surprises</p><div id="feeMini"></div></div>
+        <div class="card"><h3>Notifications</h3><p class="sub">Latest from the academy</p><div id="miniNotes"></div></div>
+      </div>
+    </section>
+
+    <!-- MY BATCHES -->
+    <section class="view" id="v-programs">
+      <div class="ph">
+        <div><span class="eyebrow">YOUR POOL LIBRARY</span><h1>My batches</h1><p>All batches you have joined, in one place.</p></div>
+        <button class="btn btn-primary" data-go="enrol">Explore more batches <i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+      <div class="grid g3" id="myBatches"></div>
+    </section>
+
+    <!-- SCHEDULE -->
+    <section class="view" id="v-schedule">
+      <div class="ph"><div><span class="eyebrow">A WEEK IN THE WATER</span><h1>My schedule</h1><p>Weekly timings for the batches you joined.</p></div></div>
+      <div class="card">
+        <h3>Weekly lesson plan</h3><p class="sub">All times are local pool times</p>
+        <div class="tw"><table><thead><tr><th>DAY</th><th>CLASSES</th></tr></thead><tbody id="sched"></tbody></table></div>
+      </div>
+    </section>
+
+    <!-- CALENDAR -->
+    <section class="view" id="v-calendar">
+      <div class="ph"><div><span class="eyebrow">MONTH VIEW</span><h1>Class calendar</h1><p>Every session for your batches, laid out by date.</p></div></div>
+      <div class="card">
+        <div class="cal-head">
+          <button class="ib" id="calPrev" aria-label="Previous month"><i class="fa-solid fa-chevron-left"></i></button>
+          <h3 id="calTitle">Month</h3>
+          <button class="ib" id="calNext" aria-label="Next month"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+        <div class="cal" id="calGrid"></div>
+      </div>
+    </section>
+
+    <!-- ENROL -->
+    <section class="view" id="v-enrol">
+      <div class="ph"><div><span class="eyebrow">PICK YOUR LANE</span><h1>Enrol in a batch</h1><p>Choose a batch to add it to your dashboard.</p></div></div>
+      <div class="grid g2" id="allBatches"></div>
+    </section>
+
+    <!-- COACHES -->
+    <section class="view" id="v-coaches">
+      <div class="ph"><div><span class="eyebrow">MEET THE TEAM</span><h1>Coach directory</h1><p>The people who keep you moving through the water.</p></div></div>
+      <div class="grid g3" id="coachGrid"></div>
+    </section>
+
+    <!-- PROGRESS -->
+    <section class="view" id="v-progress">
+      <div class="ph"><div><span class="eyebrow">PRACTICE MAKES PROGRESS</span><h1>Attendance &amp; skill level</h1><p>Keep the small milestones in sight.</p></div></div>
+      <div class="grid g2" style="margin-bottom:1.4rem">
+        <div class="card">
+          <h3>Attendance</h3><p class="sub">Last 14 sessions (sample data)</p>
+          <div class="ringwrap"><div class="ring" id="ring"><div><span id="ringTxt">0%</span></div></div><div class="dots" id="dots"></div></div>
+        </div>
+        <div class="card">
+          <h3>Milestones to celebrate</h3><p class="sub">Your next goals</p>
+          <ul class="miles">
+            <li><span class="ic"><i class="fa-solid fa-water"></i></span><div><b>Float with confidence</b><span>Relax and stay afloat</span></div></li>
+            <li><span class="ic"><i class="fa-solid fa-person-swimming"></i></span><div><b>Swim a full lap</b><span>Smooth freestyle breathing</span></div></li>
+            <li><span class="ic"><i class="fa-solid fa-trophy"></i></span><div><b>Join the club gala</b><span>Plan a friendly race day</span></div></li>
+          </ul>
+        </div>
+      </div>
+      <div class="card"><h3>Skill levels</h3><p class="sub">Progress for each enrolled batch (sample illustration)</p><div id="skills"></div></div>
+    </section>
+
+    <!-- FEES -->
+    <section class="view" id="v-fees">
+      <div class="ph"><div><span class="eyebrow">SIMPLE &amp; CLEAR</span><h1>Fees &amp; payments</h1><p>Track fees for the batches you have chosen.</p></div></div>
+      <div class="grid g-main">
+        <div class="card">
+          <h3>Current monthly summary</h3><p class="sub">Course pricing</p>
+          <div class="tw"><table><thead><tr><th>BATCH</th><th>TIMING</th><th>FEE</th></tr></thead><tbody id="feeRows"></tbody></table></div>
+          <div class="row" style="margin-top:1rem">
+            <div class="grow"><b>Total due</b></div>
+            <b id="total" style="font-family:'Playfair Display',serif;font-size:1.6rem">&#8377;0</b>
+            <span class="badge" id="paidBadge">Unpaid</span>
+          </div>
+          <div style="display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1rem">
+            <button class="btn btn-primary" id="payBtn">Pay now (demo) <i class="fa-solid fa-arrow-right"></i></button>
+            <button class="btn btn-secondary" id="rcpt">Download receipt <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Payment information</h3><p class="sub">Interface preview</p>
+          <p>No payment gateway is connected and no money changes hands. A live version would use a secure payment provider and verified member accounts.</p>
+          <p style="margin-top:1rem">Need help with fees? <a class="tag" href="contact.html">Send an enquiry</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAYMENT HISTORY -->
+    <section class="view" id="v-history">
+      <div class="ph"><div><span class="eyebrow">YOUR RECORDS</span><h1>Payment history</h1><p>Past months at a glance (sample data).</p></div></div>
+      <div class="grid g-main">
+        <div class="card">
+          <h3>Receipts</h3><p class="sub">Filter by status</p>
+          <div class="field" style="max-width:220px"><label for="histFilter">STATUS</label>
+            <select id="histFilter"><option value="all">All</option><option value="Paid">Paid</option><option value="Pending">Pending</option></select>
+          </div>
+          <div class="tw"><table><thead><tr><th>RECEIPT</th><th>MONTH</th><th>AMOUNT</th><th>STATUS</th></tr></thead><tbody id="histRows"></tbody></table></div>
+        </div>
+        <div class="card"><h3>Totals</h3><p class="sub">Across the listed months</p><div id="histSum"></div></div>
+      </div>
+    </section>
+
+    <!-- NOTIFICATIONS -->
+    <section class="view" id="v-notices">
+      <div class="ph">
+        <div><span class="eyebrow">STAY IN THE LOOP</span><h1>Notifications centre</h1><p>Announcements from coaches and the front desk.</p></div>
+        <button class="btn btn-secondary" id="readAll">Mark all as read <i class="fa-solid fa-check"></i></button>
+      </div>
+      <div class="card"><div id="noteList"></div></div>
+    </section>
+
+    <!-- PROFILE -->
+    <section class="view" id="v-profile">
+      <div class="ph"><div><span class="eyebrow">YOUR DETAILS</span><h1>Profile settings</h1><p>Saved only in this browser (demo).</p></div></div>
+      <div class="grid g2">
+        <div class="card">
+          <h3>Personal information</h3><p class="sub">Keep your contact details current</p>
+          <div class="field"><label for="pName">FULL NAME</label><input id="pName" type="text" autocomplete="name"></div>
+          <div class="field"><label for="pEmail">EMAIL</label><input id="pEmail" type="email" autocomplete="email"></div>
+          <div class="field"><label for="pPhone">PHONE</label><input id="pPhone" type="tel" autocomplete="tel"></div>
+          <div class="field"><label for="pGoal">SWIMMING GOAL</label>
+            <select id="pGoal"><option>Learn to swim</option><option>Improve technique</option><option>Fitness</option><option>Compete</option></select>
+          </div>
+          <button class="btn btn-primary" id="saveProfile">Save changes <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+        <div class="card">
+          <h3>Preferences</h3><p class="sub">Choose what we send you</p>
+          <label class="switch"><span>Class reminders</span><input type="checkbox" data-pref="remind" checked></label>
+          <label class="switch"><span>Fee due alerts</span><input type="checkbox" data-pref="fees" checked></label>
+          <label class="switch"><span>Pool closure notices</span><input type="checkbox" data-pref="closure" checked></label>
+          <label class="switch"><span>Gala &amp; event news</span><input type="checkbox" data-pref="events"></label>
+          <button class="btn btn-danger" id="resetDemo" style="margin-top:1.2rem">Reset demo data <i class="fa-solid fa-rotate-left"></i></button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span>&copy; 2026 AQUAFLOW Swimming Academy</span>
+    <span><a href="privacy-policy.html">Privacy Policy</a><a href="terms-and-conditions.html">Terms &amp; Conditions</a></span>
+  </footer>
+</div>
+<div class="toast" id="toast"></div>
+
+<script src="dashboard.js">
+
+</script>
+
+</body>
+</html>

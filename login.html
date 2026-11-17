@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AQUAFLOW Swimming Academy | Sign In</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet" href="login.css">
+
+</head>
+<body>
+
+<!-- RTL + theme buttons -->
+<div class="tools">
+  <button class="rtl-btn" id="rtlBtn" type="button" aria-label="Toggle RTL / LTR">
+    <i class="fa-solid fa-right-left"></i> <span id="rtlTxt">RTL</span>
+  </button>
+  <button class="theme-btn" id="themeBtn" type="button" aria-label="Toggle dark mode">
+    <i class="fa-solid fa-moon"></i>
+  </button>
+</div>
+
+<main class="page">
+  <section class="card">
+
+    <div class="brand-band">
+      <a href="index.html" class="brand" aria-label="AQUAFLOW home">
+        <img class="logo logo-light" src="/764d7c27-2704-447a-8431-1c050a05b83d.png" alt="AQUAFLOW logo">
+        <img class="logo logo-dark" src="/f7fbfc3b-d4d7-49fc-ac09-b3e27f596284.png" alt="AQUAFLOW logo">
+        <span class="brand-text"><strong>AQUAFLOW</strong><small>Swimming Academy</small></span>
+      </a>
+    </div>
+
+    <div class="card-body">
+      <p class="welcome" id="welcome">Welcome back</p>
+      <h1 id="title">Sign in</h1>
+      <p class="sub" id="sub">Your next lap starts here.</p>
+
+      <!-- ===== SIGN IN ===== -->
+      <form id="loginForm" novalidate>
+        <label for="lEmail">Email address</label>
+        <div class="field">
+          <i class="fa-regular fa-envelope lead"></i>
+          <input type="email" id="lEmail" placeholder="your@email.com" autocomplete="email" aria-describedby="lEmailErr">
+          <small class="err" id="lEmailErr"></small>
+        </div>
+
+        <label for="lPass">Password</label>
+        <div class="field">
+          <i class="fa-solid fa-lock lead"></i>
+          <input type="password" id="lPass" placeholder="••••••••" autocomplete="current-password" aria-describedby="lPassErr">
+          <button type="button" class="eye" aria-label="Show password"><i class="fa-regular fa-eye"></i></button>
+          <small class="err" id="lPassErr"></small>
+        </div>
+        <p class="caps" id="lCaps" hidden><i class="fa-solid fa-triangle-exclamation"></i> Caps Lock is on</p>
+
+        <div class="row">
+          <label class="check"><input type="checkbox" id="remember"> Remember me</label>
+          <a href="#" id="toForgot">Forgot password?</a>
+        </div>
+
+        <button type="submit" class="btn" id="lBtn"><span class="btn-text">SIGN IN</span> <i class="fa-solid fa-arrow-right"></i></button>
+        <p class="msg" id="lMsg" role="status"></p>
+
+        <div class="divider">or continue with</div>
+        <div class="socials">
+          <button type="button" class="social" data-provider="Google"><i class="fa-brands fa-google"></i> Google</button>
+          <button type="button" class="social" data-provider="Apple"><i class="fa-brands fa-apple"></i> Apple</button>
+        </div>
+      </form>
+
+      <!-- ===== CREATE ACCOUNT ===== -->
+      <form id="signupForm" novalidate hidden>
+        <div class="seg" role="radiogroup" aria-label="Account type">
+          <input type="radio" name="role" id="roleStudent" value="Student" checked>
+          <label for="roleStudent"><i class="fa-solid fa-person-swimming"></i> Student</label>
+          <input type="radio" name="role" id="roleParent" value="Parent">
+          <label for="roleParent"><i class="fa-solid fa-user-group"></i> Parent</label>
+        </div>
+
+        <label for="sName">Full name</label>
+        <div class="field">
+          <i class="fa-regular fa-user lead"></i>
+          <input type="text" id="sName" placeholder="Your full name" autocomplete="name" aria-describedby="sNameErr">
+          <small class="err" id="sNameErr"></small>
+        </div>
+
+        <label for="sEmail">Email address</label>
+        <div class="field">
+          <i class="fa-regular fa-envelope lead"></i>
+          <input type="email" id="sEmail" placeholder="your@email.com" autocomplete="email" aria-describedby="sEmailErr">
+          <small class="err" id="sEmailErr"></small>
+        </div>
+
+        <div class="two">
+          <div>
+            <label for="sPass">Password</label>
+            <div class="field">
+              <i class="fa-solid fa-lock lead"></i>
+              <input type="password" id="sPass" placeholder="••••••••" autocomplete="new-password" aria-describedby="sPassErr">
+              <button type="button" class="eye" aria-label="Show password"><i class="fa-regular fa-eye"></i></button>
+              <small class="err" id="sPassErr"></small>
+            </div>
+          </div>
+          <div>
+            <label for="sPass2">Confirm</label>
+            <div class="field">
+              <i class="fa-solid fa-lock lead"></i>
+              <input type="password" id="sPass2" placeholder="••••••••" autocomplete="new-password" aria-describedby="sPass2Err">
+              <button type="button" class="eye" aria-label="Show password"><i class="fa-regular fa-eye"></i></button>
+              <small class="err" id="sPass2Err"></small>
+            </div>
+          </div>
+        </div>
+
+        <div class="meter" id="meter" data-level="0" aria-hidden="true">
+          <span></span><span></span><span></span><span></span>
+        </div>
+        <p class="meter-label" id="meterLabel" aria-live="polite"></p>
+
+        <label class="check terms">
+          <input type="checkbox" id="terms">
+          <span>I agree to the <a href="#">Terms</a> and <a href="#">Privacy Policy</a>.</span>
+        </label>
+        <small class="err" id="termsErr"></small>
+
+        <button type="submit" class="btn" id="sBtn"><span class="btn-text">CREATE ACCOUNT</span> <i class="fa-solid fa-arrow-right"></i></button>
+        <p class="msg" id="sMsg" role="status"></p>
+      </form>
+
+      <!-- ===== FORGOT PASSWORD ===== -->
+      <form id="forgotForm" novalidate hidden>
+        <label for="fEmail">Email address</label>
+        <div class="field">
+          <i class="fa-regular fa-envelope lead"></i>
+          <input type="email" id="fEmail" placeholder="your@email.com" autocomplete="email" aria-describedby="fEmailErr">
+          <small class="err" id="fEmailErr"></small>
+        </div>
+
+        <button type="submit" class="btn" id="fBtn"><span class="btn-text">SEND RESET LINK</span> <i class="fa-solid fa-arrow-right"></i></button>
+        <p class="msg" id="fMsg" role="status"></p>
+        <div style="text-align:center">
+          <button type="button" class="back" id="fBack"><i class="fa-solid fa-arrow-left"></i> Back to sign in</button>
+        </div>
+      </form>
+
+      <p class="note" id="note">Student portal preview · no real account required</p>
+      <p class="alt" id="altLogin">New to AQUAFLOW? <a id="toSignup" role="button" tabindex="0">Create an account <i class="fa-solid fa-arrow-right"></i></a></p>
+      <p class="alt" id="altSignup" hidden>Already a member? <a id="toLogin" role="button" tabindex="0">Sign in <i class="fa-solid fa-arrow-right"></i></a></p>
+    </div>
+  </section>
+</main>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="login.js">
+
+</script>
+</body>
+</html>

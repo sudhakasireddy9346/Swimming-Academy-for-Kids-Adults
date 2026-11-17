@@ -1,0 +1,151 @@
+/* ============ 1. THEME TOKENS ============ */
+:root { --primary: #075985; --secondary: #2DD4BF; --bg: #f4fbfd; --alt: #e6f4f8; --card: #fff; --text: #0b2a3a; --muted: #4b6a7a; --field: #f1fafc; --line: #bfe6ee; --hf: #075985; --accent: #0d9488; --danger: #dc2626; --warn: #d97706; --shadow: 0 12px 30px rgba(7, 89, 133, .15); }
+
+[data-theme="dark"] { --primary: #082F49; --secondary: #5EEAD4; --bg: #06202f; --alt: #082a3f; --card: #0b3652; --text: #e8f6fa; --muted: #a5c4d1; --field: #082a3f; --line: #14506f; --hf: #082F49; --accent: #5EEAD4; --danger: #f87171; --warn: #fbbf24; --shadow: 0 12px 30px rgba(0, 0, 0, .4); }
+
+
+/* ============ 2. RESET + BASE ============ */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body { height: 100%; }
+
+body { font-family: 'DM Sans', sans-serif; color: var(--text); line-height: 1.5; overflow-x: hidden; transition: background .4s, color .4s; background: radial-gradient(circle at 15% 10%, var(--alt), transparent 55%), radial-gradient(circle at 90% 90%, var(--alt), transparent 50%), var(--bg); }
+
+h1, h2, h3 { font-family: 'Playfair Display', serif; line-height: 1.15; }
+
+a { text-decoration: none; color: inherit; transition: .3s; }
+
+img { display: block; max-width: 100%; }
+
+button { font-family: inherit; }
+
+[hidden] { display: none !important; }
+
+:focus-visible { outline: 3px solid var(--secondary); outline-offset: 2px; }
+
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+
+/* ============ 3. TOP TOOLS (RTL + THEME) ============ */
+.tools { position: fixed; top: 12px; inset-inline-end: 12px; z-index: 10; display: flex; align-items: center; gap: .7rem; background: var(--hf); padding: .5rem .8rem; border-radius: 50px; box-shadow: var(--shadow); }
+
+.theme-btn,
+.rtl-btn { background: none; border: 1px solid var(--secondary); color: #fff; height: 40px; border-radius: 50px; cursor: pointer; transition: .3s; font-weight: 700; font-size: .8rem; }
+.theme-btn { width: 40px; border-radius: 50%; }
+.rtl-btn { padding: 0 .9rem; display: inline-flex; align-items: center; gap: .4rem; }
+.theme-btn:hover,
+.rtl-btn:hover { background: var(--secondary); color: #05222f; transform: translateY(-2px); }
+
+/* ============ 4. PAGE + CARD ============ */
+.page { min-height: 100svh; display: grid; place-items: center; padding: 76px 16px 24px; }
+.card { width: min(500px, 100%); background: var(--card); border: 1px solid var(--line); border-radius: 28px; box-shadow: var(--shadow); overflow: hidden; text-align: center; animation: rise .7s ease both; }
+@keyframes rise {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: none; }
+}
+.card-body { padding: clamp(14px, 2.6vh, 26px) clamp(20px, 5vw, 30px) clamp(14px, 2.4vh, 24px); }
+
+/* ============ 5. BRAND BAND ============ */
+.brand-band { background: var(--hf); padding: clamp(10px, 1.8vh, 16px) 16px; display: flex; justify-content: center; }
+.brand { display: flex; align-items: center; gap: .7rem; color: #fff; }
+.logo { height: clamp(40px, 6.5vh, 52px); width: auto; background: transparent; }
+.logo-dark { display: none; }
+[data-theme="dark"] .logo-light { display: none; }
+[data-theme="dark"] .logo-dark { display: block; }
+.brand-text { display: flex; flex-direction: column; line-height: 1.1; text-align: start; }
+.brand-text strong { font-family: 'Playfair Display', serif; font-size: 1.35rem; letter-spacing: 1.5px; }
+.brand-text small { font-size: .75rem; color: var(--secondary); letter-spacing: .5px; }
+
+/* ============ 6. HEADINGS ============ */
+.welcome { font-size: .72rem; letter-spacing: 2px; font-weight: 700; color: var(--accent); text-transform: uppercase; }
+h1 { font-size: clamp(1.6rem, 4.2vh, 2.3rem); margin: .15rem 0; }
+.sub { color: var(--muted); font-size: .9rem; margin-bottom: clamp(8px, 1.8vh, 16px); }
+
+/* ============ 7. FORM FIELDS ============ */
+form { text-align: start; }
+label { display: block; font-size: .7rem; font-weight: 700; letter-spacing: .8px; text-transform: uppercase; margin-bottom: .3rem; }
+.field { position: relative; margin-bottom: clamp(8px, 1.6vh, 14px); }
+.field > i.lead { position: absolute; inset-inline-start: 14px; top: 50%; transform: translateY(-50%); color: var(--secondary); pointer-events: none; font-size: .9rem; }
+.field input { width: 100%; height: clamp(40px, 5.6vh, 46px); padding-inline: 40px; background: var(--field); color: var(--text); border: 1px solid var(--line); border-radius: 14px; font: inherit; font-size: .93rem; outline: 0; transition: .3s; }
+.field input::placeholder { color: var(--muted); opacity: .7; }
+.field input:focus { border-color: var(--secondary); box-shadow: 0 0 0 4px rgba(45, 212, 191, .25); }
+.field input.invalid { border-color: var(--danger); box-shadow: 0 0 0 4px rgba(220, 38, 38, .15); }
+.field input.valid { border-color: var(--accent); }
+.eye { position: absolute; inset-inline-end: 6px; top: 50%; transform: translateY(-50%); width: 34px; height: 34px; border: 0; background: none; color: var(--muted); cursor: pointer; border-radius: 50%; transition: .3s; }
+.eye:hover { color: var(--secondary); }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: .7rem; }
+.two .field input { padding-inline: 36px 34px; }
+.err { display: block; min-height: 0; margin-top: .25rem; font-size: .76rem; color: var(--danger); }
+.err:empty { display: none; }
+.caps { display: flex; align-items: center; gap: .4rem; margin: -6px 0 8px; font-size: .76rem; color: var(--warn); }
+
+/* ============ 8. PASSWORD STRENGTH ============ */
+.meter { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; margin: -4px 0 4px; }
+.meter span { height: 5px; border-radius: 5px; background: var(--line); transition: background .3s; }
+.meter[data-level="1"] span:nth-child(-n+1) { background: var(--danger); }
+.meter[data-level="2"] span:nth-child(-n+2) { background: var(--warn); }
+.meter[data-level="3"] span:nth-child(-n+3) { background: var(--secondary); }
+.meter[data-level="4"] span:nth-child(-n+4) { background: var(--accent); }
+.meter-label { font-size: .74rem; color: var(--muted); margin-bottom: clamp(8px, 1.4vh, 12px); min-height: 1.1em; }
+
+/* ============ 9. SELECTOR (STUDENT / PARENT) ============ */
+.seg { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; padding: 5px; background: var(--field); border: 1px solid var(--line); border-radius: 50px; margin-bottom: clamp(8px, 1.6vh, 14px); }
+.seg input { position: absolute; opacity: 0; pointer-events: none; }
+.seg label { margin: 0; padding: .55rem .5rem; text-align: center; border-radius: 50px; cursor: pointer; letter-spacing: .5px; color: var(--muted); transition: .3s; }
+.seg input:checked + label { background: var(--primary); color: #fff; box-shadow: 0 4px 10px rgba(7, 89, 133, .25); }
+.seg input:focus-visible + label { outline: 3px solid var(--secondary); outline-offset: 2px; }
+
+/* ============ 10. CHECKBOXES + ROW ============ */
+.row { display: flex; align-items: center; justify-content: space-between; gap: .6rem; margin: -2px 0 clamp(8px, 1.6vh, 14px); font-size: .85rem; }
+.row a:hover { color: var(--secondary); }
+.check { display: inline-flex; align-items: center; gap: .5rem; margin: 0; font-size: .82rem; font-weight: 500; letter-spacing: 0; text-transform: none; cursor: pointer; }
+.check input { width: 17px; height: 17px; accent-color: var(--accent); cursor: pointer; }
+.terms { align-items: flex-start; margin-bottom: clamp(8px, 1.4vh, 12px); color: var(--muted); }
+.terms input { margin-top: 3px; flex: none; }
+.terms a { color: var(--accent); font-weight: 700; }
+.terms a:hover { text-decoration: underline; }
+
+/* ============ 11. BUTTONS ============ */
+.btn { width: 100%; height: clamp(42px, 6vh, 50px); border-radius: 50px; border: 2px solid var(--secondary); background: var(--primary); color: #fff; font: 700 .95rem 'DM Sans', sans-serif; letter-spacing: 1px; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: .6rem; transition: .35s; }
+.btn i { transition: transform .35s; }
+.btn:hover { background: var(--secondary); color: #05222f; transform: translateY(-3px); box-shadow: 0 10px 22px rgba(45, 212, 191, .4); }
+.btn:hover i { transform: translateX(5px); }
+.btn:disabled { opacity: .75; cursor: progress; transform: none; box-shadow: none; }
+[dir="rtl"] .btn i,
+[dir="rtl"] .alt .fa-arrow-right { transform: scaleX(-1); }
+[dir="rtl"] .btn:hover i { transform: scaleX(-1) translateX(5px); }
+.spinner { width: 18px; height: 18px; border: 3px solid currentColor; border-top-color: transparent; border-radius: 50%; animation: spin .7s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.divider { display: flex; align-items: center; gap: .8rem; margin: clamp(8px, 1.6vh, 14px) 0; font-size: .76rem; color: var(--muted); }
+.divider::before,
+.divider::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+.socials { display: grid; grid-template-columns: 1fr 1fr; gap: .7rem; }
+.social { height: 42px; border-radius: 50px; border: 1px solid var(--line); background: var(--field); color: var(--text); font-weight: 700; font-size: .85rem; display: inline-flex; align-items: center; justify-content: center; gap: .5rem; cursor: pointer; transition: .3s; }
+.social:hover { border-color: var(--secondary); transform: translateY(-2px); }
+.back { background: none; border: 0; color: var(--accent); font-weight: 700; font-size: .85rem; cursor: pointer; margin-top: .6rem; display: inline-flex; gap: .4rem; align-items: center; }
+.back:hover { text-decoration: underline; }
+
+/* ============ 12. MESSAGES ============ */
+.msg { min-height: 1.2em; margin-top: .5rem; font-size: .82rem; text-align: center; color: var(--danger); }
+.msg.ok { color: var(--accent); }
+.note { font-size: .76rem; color: var(--muted); text-align: center; }
+.alt { margin-top: clamp(6px, 1.2vh, 12px); font-size: .9rem; color: var(--muted); text-align: center; }
+.alt a { color: var(--accent); font-weight: 700; cursor: pointer; }
+.alt a:hover { text-decoration: underline; }
+
+/* ============ 13. TOAST ============ */
+.toast { position: fixed; bottom: 20px; inset-inline: 16px; margin-inline: auto; width: fit-content; max-width: calc(100% - 32px); padding: .7rem 1.1rem; background: var(--hf); color: #fff; border: 1px solid var(--secondary); border-radius: 50px; box-shadow: var(--shadow); font-size: .85rem; opacity: 0; transform: translateY(20px); pointer-events: none; transition: .4s; z-index: 20; }
+.toast.show { opacity: 1; transform: none; }
+
+/* ============ 14. RESPONSIVE + MOTION ============ */
+@media (max-width: 420px) {
+  .two { grid-template-columns: 1fr; gap: 0; }
+  .brand-text small { font-size: .7rem; }
+  .socials { grid-template-columns: 1fr; }
+}
+@media (max-height: 720px) {
+  .sub, .note { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
