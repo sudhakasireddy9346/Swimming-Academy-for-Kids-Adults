@@ -52,7 +52,7 @@ img { max-width:100%; display:block; background:var(--alt); }
 a { text-decoration:none; color:inherit; transition:.3s; }
 ul { list-style:none; }
 .container { width:min(1200px,92%); margin:auto; }
-.logo { height:48px; width:auto; background:var(--logo-bg); }
+.logo { height:48px; width:auto; background:var(--logo-bg);border-radius:8px; }
 .logo-dark { display:none; }
 [data-theme="dark"] .logo-light { display:none; }
 [data-theme="dark"] .logo-dark { display:block; }

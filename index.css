@@ -9,7 +9,8 @@
   --muted:#4b6a7a;
   --shadow:0 12px 30px rgba(7,89,133,.15);
   --hf:#075985;
-  --logo-bg:transparent;
+  --logo-bg-header:var(--hf);   /* header logo background */
+  --logo-bg-footer:var(--hf)
 }
 
 /* ---------- THEME COLOURS (dark mode) ---------- */
@@ -23,7 +24,8 @@
   --muted:#a5c4d1;
   --shadow:0 12px 30px rgba(0,0,0,.4);
   --hf:#082F49;
-  --logo-bg:transparent;
+  --logo-bg-header:var(--hf);   /* header logo background */
+  --logo-bg-footer:var(--hf)
 }
 
 /* ---------- RESET AND BASE ---------- */
@@ -56,7 +58,7 @@ h3 {
 img {
   max-width:100%;
   display:block;
-  background:var(--alt);
+  
 }
 
 a {
@@ -85,6 +87,10 @@ ul {
   height:48px;
   width:auto;
   background:var(--logo-bg);
+  border-radius:8px;
+}
+.site-footer .logo {
+  background:var(--logo-bg-footer);
 }
 
 .logo-dark {

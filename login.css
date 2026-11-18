@@ -48,7 +48,7 @@ button { font-family: inherit; }
 /* ============ 5. BRAND BAND ============ */
 .brand-band { background: var(--hf); padding: clamp(10px, 1.8vh, 16px) 16px; display: flex; justify-content: center; }
 .brand { display: flex; align-items: center; gap: .7rem; color: #fff; }
-.logo { height: clamp(40px, 6.5vh, 52px); width: auto; background: transparent; }
+.logo { height: clamp(40px, 6.5vh, 52px); width: auto; background: transparent;border-radius:8px; }
 .logo-dark { display: none; }
 [data-theme="dark"] .logo-light { display: none; }
 [data-theme="dark"] .logo-dark { display: block; }
