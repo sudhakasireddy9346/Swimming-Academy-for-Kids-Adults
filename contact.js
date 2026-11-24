@@ -1,4 +1,4 @@
-/* AQUAFLOW - Contact page scripts */
+ /* AQUAFLOW - Contact page scripts */
 
 /* ---------- helpers ---------- */
 const root = document.documentElement;

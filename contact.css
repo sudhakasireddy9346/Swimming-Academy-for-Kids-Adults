@@ -1,6 +1,7 @@
-:root {
+ :root {
   --primary:#075985;
   --secondary:#2DD4BF;
+  --accent-text:#0f9f8f;
   --bg:#f4fbfd;
   --alt:#e6f4f8;
   --card:#fff;
@@ -10,7 +11,12 @@
   --field:#f1fafc;
   --accent:#0d9488;
   --shadow:0 12px 30px rgba(7,89,133,.15);
-  --hf:#075985;
+  /* Header & footer: plain white in light mode */
+  --hf:#ffffff;
+  --hf-text:#0b2a3a;
+  --hf-line:rgba(7,89,133,.15);
+  --hf-icon-bg:rgba(7,89,133,.08);
+  --logo-bg-footer:transparent;
   --hero-base:#0e7fa8;
   --hero-a:rgba(14,127,168,.45);
   --hero-b:rgba(13,148,136,.82);
@@ -20,6 +26,7 @@
 [data-theme="dark"] {
   --primary:#082F49;
   --secondary:#5EEAD4;
+  --accent-text:#5EEAD4;
   --bg:#06202f;
   --alt:#082a3f;
   --card:#0b3652;
@@ -30,6 +37,9 @@
   --accent:#5EEAD4;
   --shadow:0 12px 30px rgba(0,0,0,.4);
   --hf:#082F49;
+  --hf-text:#ffffff;
+  --hf-line:rgba(255,255,255,.2);
+  --hf-icon-bg:rgba(255,255,255,.12);
   --hero-base:#04141f;
   --hero-a:rgba(8,47,73,.7);
   --hero-b:rgba(3,14,22,.95);
@@ -166,11 +176,16 @@ ul {
   width:100%;
   z-index:50;
   background:var(--hf);
-  color:#fff;
+  color:var(--hf-text);
+  border-bottom:1px solid var(--hf-line);
   transition:.4s;
 }
 
 .site-header.scrolled {
+  box-shadow:0 6px 24px rgba(7,89,133,.15);
+}
+
+[data-theme="dark"] .site-header.scrolled {
   box-shadow:0 6px 24px rgba(0,0,0,.25);
 }
 
@@ -186,7 +201,7 @@ ul {
   display:flex;
   align-items:center;
   gap:.7rem;
-  color:#fff;
+  color:var(--hf-text);
   justify-self:start;
 }
 
@@ -204,7 +219,7 @@ ul {
 
 .brand-text small {
   font-size:.75rem;
-  color:var(--secondary);
+  color:var(--accent-text);
   letter-spacing:.5px;
 }
 
@@ -216,7 +231,7 @@ ul {
 }
 
 .nav a {
-  color:#fff;
+  color:var(--hf-text);
   font-weight:500;
   font-size:.95rem;
   position:relative;
@@ -225,7 +240,7 @@ ul {
 
 .nav a:hover,
 .nav a.active {
-  color:var(--secondary);
+  color:var(--accent-text);
 }
 
 .nav>ul>li>a::after {
@@ -301,7 +316,7 @@ ul {
 .burger {
   background:none;
   border:1px solid var(--secondary);
-  color:#fff;
+  color:var(--hf-text);
   height:34px;
   border-radius:50px;
   cursor:pointer;
@@ -992,7 +1007,8 @@ ul {
 /* footer */
 .site-footer {
   background:var(--hf);
-  color:#fff;
+  color:var(--hf-text);
+  border-top:1px solid var(--hf-line);
   padding-top:64px;
 }
 
@@ -1013,7 +1029,7 @@ ul {
 .foot-col h4 {
   font-size:1.1rem;
   margin-bottom:1.6rem;
-  color:#fff;
+  color:var(--hf-text);
   position:relative;
   padding-bottom:.7rem;
 }
@@ -1045,7 +1061,7 @@ ul {
 }
 
 .foot-col>ul>li>a:hover {
-  color:var(--secondary);
+  color:var(--accent-text);
   opacity:1;
   transform:translateX(6px);
 }
@@ -1066,10 +1082,16 @@ ul {
   border-radius:50%;
   display:grid;
   place-items:center;
+  color:var(--hf-text);
+}
+
+/* keep social icons white inside the dark side card */
+.side .social a {
   color:#fff;
 }
 
-.social a:hover {
+.social a:hover,
+.side .social a:hover {
   background:var(--secondary);
   color:#05222f;
   transform:translateY(-4px) rotate(360deg);
@@ -1087,10 +1109,10 @@ ul {
   flex:0 0 40px;
   height:40px;
   border-radius:50%;
-  background:rgba(255,255,255,.12);
+  background:var(--hf-icon-bg);
   display:grid;
   place-items:center;
-  color:var(--secondary);
+  color:var(--accent-text);
   transition:.35s;
 }
 
@@ -1101,7 +1123,7 @@ ul {
 }
 
 .contact-list a:hover {
-  color:var(--secondary);
+  color:var(--accent-text);
 }
 
 .news p {
@@ -1114,7 +1136,7 @@ ul {
   background:#fff;
   border-radius:50px;
   padding:5px;
-  border:2px solid transparent;
+  border:2px solid var(--hf-line);
   transition:.35s;
 }
 
@@ -1156,7 +1178,7 @@ ul {
   display:block;
   margin-top:.7rem;
   font-size:.85rem;
-  color:var(--secondary);
+  color:var(--accent-text);
   min-height:1.2em;
 }
 
@@ -1167,7 +1189,7 @@ ul {
   gap:1rem;
   margin-top:3rem;
   padding:1.4rem 0;
-  border-top:1px solid rgba(255,255,255,.2);
+  border-top:1px solid var(--hf-line);
   font-size:.88rem;
 }
 
@@ -1176,7 +1198,7 @@ ul {
 }
 
 .foot-bottom a:hover {
-  color:var(--secondary);
+  color:var(--accent-text);
 }
 
 .reveal {

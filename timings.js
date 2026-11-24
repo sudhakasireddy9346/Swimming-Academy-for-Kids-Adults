@@ -1,4 +1,4 @@
-const $ = (s) => document.querySelector(s);
+ const $ = (s) => document.querySelector(s);
 const $$ = (s) => [...document.querySelectorAll(s)];
 const root = document.documentElement;
 const themeBtn = $('#themeBtn');

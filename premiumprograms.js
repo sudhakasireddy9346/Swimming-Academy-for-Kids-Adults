@@ -1,4 +1,4 @@
-const root = document.documentElement;
+ const root = document.documentElement;
 const themeBtn = document.getElementById('themeBtn');
 const rtlBtn = document.getElementById('rtlBtn');
 const rtlTxt = document.getElementById('rtlTxt');

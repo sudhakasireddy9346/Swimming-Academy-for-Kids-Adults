@@ -1,7 +1,28 @@
 /* ============ 1. THEME TOKENS ============ */
-:root { --primary: #075985; --secondary: #2DD4BF; --bg: #f4fbfd; --alt: #e6f4f8; --card: #fff; --text: #0b2a3a; --muted: #4b6a7a; --field: #f1fafc; --line: #bfe6ee; --hf: #075985; --accent: #0d9488; --danger: #dc2626; --warn: #d97706; --shadow: 0 12px 30px rgba(7, 89, 133, .15); }
+:root { 
+    --primary: #075985; 
+    --secondary: #2DD4BF;
+     --bg: #f4fbfd; 
+     --alt: #e6f4f8;
+      --card: #fff; 
+      --text: #0b2a3a; 
+      --muted: #4b6a7a;
+       --field: #f1fafc; 
+       --line: #bfe6ee; 
+       --hf: #075985; 
+       --accent: #0d9488;
+        --danger: #dc2626; 
+        --warn: #d97706; 
+        --shadow: 0 12px 30px rgba(7, 89, 133, .15);
 
-[data-theme="dark"] { --primary: #082F49; --secondary: #5EEAD4; --bg: #06202f; --alt: #082a3f; --card: #0b3652; --text: #e8f6fa; --muted: #a5c4d1; --field: #082a3f; --line: #14506f; --hf: #082F49; --accent: #5EEAD4; --danger: #f87171; --warn: #fbbf24; --shadow: 0 12px 30px rgba(0, 0, 0, .4); }
+  /* header (brand band + top tools): plain white in light mode */
+  --hb: #ffffff; 
+  --hb-text: #0b2a3a;
+   --hb-accent: #075985;
+    --hb-line: rgba(7, 89, 133, .15); }
+
+[data-theme="dark"] { --primary: #082F49; --secondary: #5EEAD4; --bg: #06202f; --alt: #082a3f; --card: #0b3652; --text: #e8f6fa; --muted: #a5c4d1; --field: #082a3f; --line: #14506f; --hf: #082F49; --accent: #5EEAD4; --danger: #f87171; --warn: #fbbf24; --shadow: 0 12px 30px rgba(0, 0, 0, .4);
+  --hb: #082F49; --hb-text: #ffffff; --hb-accent: #5EEAD4; --hb-line: rgba(255, 255, 255, .2); }
 
 
 /* ============ 2. RESET + BASE ============ */
@@ -27,10 +48,10 @@ button { font-family: inherit; }
 
 
 /* ============ 3. TOP TOOLS (RTL + THEME) ============ */
-.tools { position: fixed; top: 12px; inset-inline-end: 12px; z-index: 10; display: flex; align-items: center; gap: .7rem; background: var(--hf); padding: .5rem .8rem; border-radius: 50px; box-shadow: var(--shadow); }
+.tools { position: fixed; top: 12px; inset-inline-end: 12px; z-index: 10; display: flex; align-items: center; gap: .7rem; background: var(--hb); border: 1px solid var(--hb-line); padding: .5rem .8rem; border-radius: 50px; box-shadow: var(--shadow); }
 
 .theme-btn,
-.rtl-btn { background: none; border: 1px solid var(--secondary); color: #fff; height: 40px; border-radius: 50px; cursor: pointer; transition: .3s; font-weight: 700; font-size: .8rem; }
+.rtl-btn { background: none; border: 1px solid var(--secondary); color: var(--hb-text); height: 40px; border-radius: 50px; cursor: pointer; transition: .3s; font-weight: 700; font-size: .8rem; }
 .theme-btn { width: 40px; border-radius: 50%; }
 .rtl-btn { padding: 0 .9rem; display: inline-flex; align-items: center; gap: .4rem; }
 .theme-btn:hover,
@@ -46,15 +67,15 @@ button { font-family: inherit; }
 .card-body { padding: clamp(14px, 2.6vh, 26px) clamp(20px, 5vw, 30px) clamp(14px, 2.4vh, 24px); }
 
 /* ============ 5. BRAND BAND ============ */
-.brand-band { background: var(--hf); padding: clamp(10px, 1.8vh, 16px) 16px; display: flex; justify-content: center; }
-.brand { display: flex; align-items: center; gap: .7rem; color: #fff; }
+.brand-band { background: var(--hb); border-bottom: 1px solid var(--hb-line); padding: clamp(10px, 1.8vh, 16px) 16px; display: flex; justify-content: center; }
+.brand { display: flex; align-items: center; gap: .7rem; color: var(--hb-text); }
 .logo { height: clamp(40px, 6.5vh, 52px); width: auto; background: transparent;border-radius:8px; }
 .logo-dark { display: none; }
 [data-theme="dark"] .logo-light { display: none; }
 [data-theme="dark"] .logo-dark { display: block; }
 .brand-text { display: flex; flex-direction: column; line-height: 1.1; text-align: start; }
 .brand-text strong { font-family: 'Playfair Display', serif; font-size: 1.35rem; letter-spacing: 1.5px; }
-.brand-text small { font-size: .75rem; color: var(--secondary); letter-spacing: .5px; }
+.brand-text small { font-size: .75rem; color: var(--hb-accent); letter-spacing: .5px; }
 
 /* ============ 6. HEADINGS ============ */
 .welcome { font-size: .72rem; letter-spacing: 2px; font-weight: 700; color: var(--accent); text-transform: uppercase; }

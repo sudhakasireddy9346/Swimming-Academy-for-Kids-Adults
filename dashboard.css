@@ -9,6 +9,11 @@
   --line:rgba(7,89,133,.14);
   --shadow:0 12px 30px rgba(7,89,133,.13);
   --hf:#075985;
+  /* header (sidebar brand block): plain white in light mode */
+  --hb:#ffffff;
+  --hb-text:#0b2a3a;
+  --hb-accent:#075985;
+  --hb-border:rgba(7,89,133,.14);
   --logo-bg:transparent;
   --side:300px
 }
@@ -23,7 +28,11 @@
   --muted:#a5c4d1;
   --line:rgba(94,234,212,.18);
   --shadow:0 12px 30px rgba(0,0,0,.4);
-  --hf:#082F49
+  --hf:#082F49;
+  --hb:#082F49;
+  --hb-text:#ffffff;
+  --hb-accent:#5EEAD4;
+  --hb-border:#5EEAD4
 }
 
 * {
@@ -187,12 +196,12 @@ textarea {
   display:flex;
   align-items:center;
   gap:.65rem;
-  color:#fff;
-  background:var(--hf);
+  color:var(--hb-text);
+  background:var(--hb);
   border-radius:16px;
   padding:.7rem .9rem;
   flex:0 0 auto;
-  border:1px solid var(--secondary)
+  border:1px solid var(--hb-border)
 }
 
 .brand .logo {
@@ -203,6 +212,13 @@ textarea {
   border-radius:10px;
   padding:2px;
   transition:transform .5s
+}
+
+/* dark mode: let the dark logo sit directly on the dark header (no white box) */
+[data-theme="dark"] .brand .logo {
+  background:transparent;
+  padding:0;
+  border-radius:0
 }
 
 .brand:hover .logo {
@@ -219,13 +235,13 @@ textarea {
   font-family:'Playfair Display',serif;
   font-size:1.25rem;
   letter-spacing:1.5px;
-  color:#fff
+  color:var(--hb-text)
 }
 
 .brand-text small {
   font-size:.85rem;
   letter-spacing:.3px;
-  color:var(--secondary)
+  color:var(--hb-accent)
 }
 
 .side-label {
